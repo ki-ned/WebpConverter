@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import path from "path";
+// import path from "path";
 import fs from "fs";
 import recursiveReaddir from "recursive-readdir";
 import dotenv from "dotenv";

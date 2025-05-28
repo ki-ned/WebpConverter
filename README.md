@@ -166,6 +166,11 @@ fetch('http://localhost:3000/convert', {
 .catch(error => console.error('Erreur:', error));
 ```
 
+### Avec cli
+
+pnpm convert -- [OPTIONS] CHEMIN_DOSSIER
+pnpm convert -- -q 85 -d "C:\Users\Photos"
+
 ## Développement
 
 ### Scripts disponibles
@@ -176,10 +181,46 @@ fetch('http://localhost:3000/convert', {
 - `pnpm convert` : Exécute l'outil en ligne de commande
 - `pnpm lint` : Vérifie le code avec ESLint
 
+Avec npm :
+
+- `npm run build` : Compile le projet TypeScript
+- `npm run start` : Démarre le serveur
+- `npm run dev` : Démarre le serveur en mode développement avec rechargement automatique
+- `npm run convert` : Exécute l'outil en ligne de commande
+- `npm run lint` : Vérifie le code avec ESLint
+
+## 🐳 Utilisation avec Docker
+
+### Construction de l'image
+
+```bash
+docker build -t webp-converter .
+```
+
+### Lancement du conteneur
+
+```bash
+docker run -d \
+  -p 3000:3000 \
+  -v C:\chemin\vers\images:/app/images \
+  --name webp-converter \
+  webp-converter
+```
+
+### Utilisation de l'API
+
+L'API est accessible à l'adresse : http://localhost:3000
+
+Utilisez les mêmes endpoints que décrits dans la section API ci-dessus.
+
+### Utilisation en ligne de commande dans le conteneur
+
+```bash
+docker exec webp-converter pnpm convert -- "/app/images" -q 80
+```
+
+> ⚠️ Note : Dans le conteneur, utilisez des chemins Unix (avec des slashes /) et assurez-vous que le dossier est monté correctement avec l'option `-v`.
+
 ## Licence
 
 ISC
-
-## Example avec cli
-pnpm convert -- [OPTIONS] CHEMIN_DOSSIER
-pnpm convert -- -q 85 -d "C:\Users\Photos"

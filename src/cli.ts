@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import path from "path";
+// import path from "path";
 import fs from "fs";
 import recursiveReaddir from "recursive-readdir";
 import dotenv from "dotenv";
@@ -134,7 +134,7 @@ Options:
   -d, --delete            Supprimer les fichiers originaux après conversion
 
 Exemple:
-  webp-converter -q 85 -d "C:\Users\Photos"
+  webp-converter -q 85 -d "C:\\Users\\Photos"
 `);
 }
 
