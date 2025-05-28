@@ -1,0 +1,46 @@
+{
+  "name": "image-webp-converter",
+  "version": "1.0.0",
+  "description": "Microservice pour convertir des images en format WebP",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "webp-converter": "./dist/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc -w & node --watch dist/index.js",
+    "convert": "node dist/cli.js",
+    "lint": "eslint src --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webp",
+    "image",
+    "conversion",
+    "microservice",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "recursive-readdir": "^2.2.3",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "@types/recursive-readdir": "^2.2.4",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
